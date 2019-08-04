@@ -1,6 +1,6 @@
 from django.db import models
 
-from demosite.core.models import User
+from core.models import User
 
 
 class TeamMember(User):
