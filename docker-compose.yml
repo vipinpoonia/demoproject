@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  db:
+    image: "postgres:11"
+    container_name: "demosite_db"
+    ports:
+      - 5432:5432
+    restart: always
+    env_file:
+      - database.env
