@@ -1,15 +1,14 @@
 from .common import *
 
+SECRET_KEY = secrets.value("SECRET_KEY")
 
-# Db settings for staging
-SECRET_KEY = ''
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
-        'HOST': '',
+        'NAME': secrets.value("DEFAULT_DB_NAME"),
+        'HOST': secrets.value("DEFAULT_DB_HOST"),
         'PORT': 5432,
-        'USER': '',
-        'PASSWORD': '',
+        'USER': secrets.value("DEFAULT_DB_USER"),
+        'PASSWORD': secrets.value("DEFAULT_DB_PASSWORD"),
     }
 }

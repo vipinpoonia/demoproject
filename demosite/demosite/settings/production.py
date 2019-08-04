@@ -1,17 +1,16 @@
 from .common import *
 
 DEBUG = False
+ALLOWED_HOSTS = ['*']
 
-# Db settings for production
-SECRET_KEY = 'asfjasf-asfjasfj'
-
+SECRET_KEY = secrets.value("SECRET_KEY")
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': '',
-        'HOST': '',
+        'NAME': secrets.value("DEFAULT_DB_NAME"),
+        'HOST': secrets.value("DEFAULT_DB_HOST"),
         'PORT': 5432,
-        'USER': '',
-        'PASSWORD': '',
+        'USER': secrets.value("DEFAULT_DB_USER"),
+        'PASSWORD': secrets.value("DEFAULT_DB_PASSWORD"),
     }
 }

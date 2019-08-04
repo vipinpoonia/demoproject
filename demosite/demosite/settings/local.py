@@ -2,8 +2,8 @@ from .common import *
 
 DEBUG = True
 ALLOWED_HOSTS = ['*']
-SECRET_KEY = 'my-secret-key'
 
+SECRET_KEY = secrets.value("SECRET_KEY")
 
 DATABASES = {
     'default': {
