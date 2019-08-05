@@ -5,13 +5,14 @@ ALLOWED_HOSTS = ['*']
 
 SECRET_KEY = secrets.value("SECRET_KEY")
 
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'HOST': 'localhost',
+        'NAME': secrets.value("DEFAULT_DB_NAME"),
+        'HOST': secrets.value("DEFAULT_DB_HOST"),
         'PORT': 5432,
-        'NAME': 'demosite',
-        'USER': 'demouser',
-        'PASSWORD': 'd3m0d3m0',
+        'USER': secrets.value("DEFAULT_DB_USER"),
+        'PASSWORD': secrets.value("DEFAULT_DB_PASSWORD"),
     }
 }

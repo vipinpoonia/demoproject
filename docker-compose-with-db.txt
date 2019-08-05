@@ -3,9 +3,16 @@ version: "3"
 services:
   db:
     image: "postgres:11"
-    container_name: "demosite_db"
     ports:
       - 5432:5432
     restart: always
     env_file:
       - database.env
+  demoproject:
+    image: demoapp
+    env_file:
+      - demosite.env
+    ports:
+      - 8000:80
+    depends_on:
+      - db
