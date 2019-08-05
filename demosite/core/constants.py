@@ -1,1 +1,1 @@
-PHONE_REGEX = '^[6789]\d{9}$'
+PHONE_REGEX = r'^\+?1?\d{9,15}$'
